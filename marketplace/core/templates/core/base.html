@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title> {% block title %}{% endblock %} | Marketplace</title>
+</head>
+<body class="bg-gray-100">
+    <!--NavBar-->
+    <nav class="bg-orange-600 p-4 flex justify-between">
+        <a href="/" class="text-3xl text-white font-bold">Marketplace</a>
+        <div class="flex space-x-4 items-center text-white">
+            <a href="#" class="hover:underline">Add item</a>
+            <a href="#" class="hover:underline">Browse</a>
+            <a href="#" class="bg-rose-600 px-4 py-1 rounded-md hover:scale-105">Signup</a>
+            <a href="#" class="bg-slate-500 px-4 py-1 rounded-md hover:scale-105">Login</a>
+        </div>
+    </nav>
+
+    <!--Main Content-->
+    <main class="flex-grow container p-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="p-4 bg-[#0f0e17] flex justify-between">
+        <div class="w-2/3 pr-10">
+            <h3 class="text-white mb-5">About</h3>
+            <p class="text-[#a7a9be]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sed inventore numquam quos sapiente ratione quo illum cumque, eligendi, incidunt ducimus quas harum. Quae eius, nulla aspernatur tenetur ut nemo?</p>
+        </div>
+
+        <div class="w-1/3">
+            <h3 class="text-white mb-5">More</h3>
+            <ul class="text-rose-600">
+                <li><a href="#" class="hover:text-rose-900">About</a></li>
+                <li><a href="{% url 'contact' %}" class="hover:text-rose-900">Contact</a></li>
+                <li><a href="#" class="hover:text-rose-900">Privacy policy</a></li>
+                <li><a href="#" class="hover:text-rose-900">Terms of use</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
