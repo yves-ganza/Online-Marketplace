@@ -1,0 +1,30 @@
+# Python virtual environment
+env/
+.env/
+
+# Bytecode files
+__pycache__/
+
+# Test cache
+.pytest_cache/
+
+# IDE specific files 
+.vscode/
+
+# Compiled Python files
+*.pyc
+
+# SQLite database file
+db.sqlite3
+
+# Log files
+*.log
+
+# Environment variables
+*.env
+
+# Test coverage
+.coverage
+
+# mypy cache
+.mypy_cache/
