@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% block title %} {{ item.name }} {% endblock %}
+
+{% block content %}
+<div class="grid grid-cols-5 gap-6">
+    <div class="col-span-3">
+        <img src="{{ item.image.url }}" alt="{{ item.name }}" class="rounded-md">
+    </div>
+    <div class="col-span-2 p-4 mt-6">
+        <h2 class="text-2xl font-semibold mb-4">{{ item.name }}</h2>
+        {% if item.description %}
+        <p class="font-light">{{ item.description }}</p>
+        {% endif %}
+        <br><hr><br>
+        <p class="">Price: ${{ item.price }}</p>
+        <br>
+        <a href="#" class="bg-rose-600 px-4 py-2 rounded-md hover:bg-rose-800 text-white">Contact seller</a>
+    </div>
+</div>
+<div>
+    <h3 class="text-xl font-semibold text-center">Related Items</h3>
+    <div class="flex justify-between">
+        {% for item in related_items %}
+        <div class="p-4">
+            <a href="{% url 'item:detail' item.id %}">
+                <div class="aspect-w-16 aspect-h-9">
+                    <img src="{{ item.image.url }}" alt="{{ item.name }}" srcset="" class="object-cover w-full h-full rounded-t-md">
+                </div>
+                <hr>
+                <div class="bg-white p-4 rounded-b-md">
+                    <h3 class="text-xl text-[#0d0d0d]">{{ item.name }}</h3>
+                    <p class="text-gray-600">Price: $ {{ item.price }}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor%}
+    </div>
+</div>
+{% endblock %}

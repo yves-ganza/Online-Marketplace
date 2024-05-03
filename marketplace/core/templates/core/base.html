@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title> {% block title %}{% endblock %} | Marketplace</title>
 </head>
-<body class="bg-gray-100">
+<body class="flex flex-col h-screen">
     <!--NavBar-->
     <nav class="bg-orange-600 p-4 flex justify-between">
         <a href="/" class="text-3xl text-white font-bold">Marketplace</a>
@@ -19,7 +19,7 @@
     </nav>
 
     <!--Main Content-->
-    <main class="flex-grow container p-4">
+    <main class="flex-1 p-4">
         {% block content %}
         {% endblock %}
     </main>
