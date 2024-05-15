@@ -18,7 +18,7 @@
 
         {% if request.user == item.created_by %}
         <div class="bg-white">
-            <a href="#" class="bg-orange-500 px-4 py-2 rounded-md hover:bg-orange-600 text-white">Edit item</a>
+            <a href="{% url 'item:edit' item.id %}" class="bg-orange-500 px-4 py-2 rounded-md hover:bg-orange-600 text-white">Edit item</a>
             <a href="{% url 'item:delete' item.id %}" class="bg-red-500 px-4 py-2 rounded-md hover:bg-red-600 text-white">Delete item</a>
         </div>
         {% else %}
