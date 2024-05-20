@@ -3,11 +3,11 @@
 {% block title %} All messages {% endblock %}
 
 {% block content %}
-<h2 class="text-2xl font-semibold">Messages</h2>
+<h2 class="text-2xl font-semibold">Conversations</h2>
 <hr class="mb-4">
 <div class="flex flex-col gap-4 max-w-lg">
     {% for message in messages %}
-    <a href="#">
+    <a href="{% url 'inbox:detail' message.pk %}">
         <div class="flex bg-gray-100 rounded p-4 space-x-4">
             <div>
                 <img class="w-20" src="{{ message.item.image.url }}" alt="{{ message.item.name }}">
@@ -16,7 +16,7 @@
                 {% for member in message.members.all %}
                     {% if member != request.user %}
                     <p class="mb-4"><strong>{{ member.username }}</strong> | {{ message.modified_at}}</p>
-                    <p>{{ message.item.name }}</p>
+                    <p>Subject: {{ message.item.name }}</p>
                     {% endif %} 
                 {% endfor %}
                 <p></p>

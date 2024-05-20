@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Conversation {% endblock %}
+
+{% block content %}
+<div class="max-w-lg border p-4">
+    <h3 class="text-xl font-semibold mb-4">Subject: {{ convo.item.name }}</h3>
+    <div class="space-y-4">
+        {% for message in convo.messages.all %}
+            <div class="py-2 px-4 rounded border{% if message.created_by == request.user %} bg-gray-100 {% endif %}">
+                <p class="mb-4"><strong>{{ message.created_by.username }}</strong> @ {{ message.created_at }}</p>
+                <p>{{ message.content }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <form action="." method="post">
+        {% csrf_token %}
+        <div>
+            {{ form.content }}
+        </div>
+        {% if form.errors or form.non_field_errors %}
+            <div class="mb-3 p-4 bd-red-100 rounded">
+                {%for field in form %}
+                    {{ field.errors }}
+                {% endfor %}
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+        <button class="bg-rose-600 px-4 py-2 mt-2 rounded text-white text-center">Send</button>
+    </form>
+</div>
+{% endblock %}
