@@ -22,7 +22,7 @@
             <a href="{% url 'item:delete' item.id %}" class="bg-red-500 px-4 py-2 rounded-md hover:bg-red-600 text-white">Delete item</a>
         </div>
         {% else %}
-            <a href="#" class="bg-rose-600 px-4 py-2 rounded-md hover:bg-rose-800 text-white">Contact seller</a>
+            <a href="{% url 'inbox:new' item.id %}" class="bg-rose-600 px-4 py-2 rounded-md hover:bg-rose-800 text-white">Contact seller</a>
         {% endif %}
     </div>
 </div>
