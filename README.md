@@ -25,7 +25,7 @@ To set up the project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yves-ganza/marketplace.git
+   git clone https://github.com/yves-ganza/online-marketplace.git
    cd online-marketplace
    ```
 2. Create a virtual environment:
